@@ -2,10 +2,50 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Generador CV - Prueba</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de CV - NFQ</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; color: #333; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .container { background: white; padding: 40px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 100%; max-width: 400px; }
+        h2 { text-align: center; color: #2c3e50; margin-bottom: 20px; }
+        label { font-weight: bold; display: block; margin-top: 15px; margin-bottom: 5px; }
+        input, select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+        button { width: 100%; padding: 12px; background-color: #2c3e50; color: white; border: none; border-radius: 5px; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 25px; transition: background 0.3s; }
+        button:hover { background-color: #1a252f; }
+        .footer { text-align: center; margin-top: 15px; font-size: 12px; color: #777; }
+    </style>
 </head>
-<body style="text-align: center; padding: 50px; font-family: Arial;">
-    <h1 style="color: green;">¡El servidor está vivo! 🚀</h1>
-    <p>Si puedes leer esto, significa que el problema estaba en el código HTML de tu formulario anterior.</p>
+<body>
+
+    <div class="container">
+        <h2>Generador de CV IA</h2>
+        
+        <form action="/generar" method="POST" enctype="multipart/form-data">
+            
+            <label for="nombre">Nombre Completo:</label>
+            <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan Pérez">
+
+            <label for="cargo">Cargo a aplicar:</label>
+            <select id="cargo" name="cargo" required>
+                <option value="ASSI">Associate</option>
+                <option value="CONS">Consultant</option>
+                <option value="SR CONS">Senior Consultant</option>
+                <option value="EXP SR CONS">Experienced Senior Consultant</option>
+                <option value="MNGR">Manager</option>
+                <option value="SR MNGR">Senior Manager</option>
+                <option value="SOCIO">Socio</option>
+            </select>
+
+            <label for="experiencia">Años de Experiencia:</label>
+            <input type="number" id="experiencia" name="experiencia" required placeholder="Ej: 3">
+
+            <label for="cv_adjunto">Sube el CV original (PDF):</label>
+            <input type="file" id="cv_adjunto" name="cv_adjunto" accept=".pdf" required>
+
+            <button type="submit">Generar CV Formato Word</button>
+        </form>
+        <div class="footer">Potenciado por Llama 3 & Python</div>
+    </div>
+
 </body>
 </html>
