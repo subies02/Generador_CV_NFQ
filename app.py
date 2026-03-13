@@ -44,7 +44,7 @@ def procesar_cv():
            - "educacion": (Array de Strings) Cada elemento debe seguir este formato: "[Título educativo] - [Nombre organización educativa] ([fechas])"
            - "experiencia_profesional": (Array de Strings) Cada elemento debe seguir este formato: "[Cargo] - [NOMBRE EMPRESA] - [Ciudad, País] ([fechas])\\n- [Tarea 1]\\n- [Tarea 2]\\n- [Tarea 3]\\n"
            - "highlights": (Array de Strings) Exactamente 3 bullet points con una breve descripción de logros.
-           - "skills": (Array de Strings) Exactamente 3 palabras clave o conceptos sin descripción.
+           - "skills": (Array de Strings) Exactamente 3 palabras clave o conceptos sin descripción e ignorando los lenguajes de programación.
            - "lenguajes_programacion": (String) Todos los lenguajes dominados en una sola línea separados por comas, sin descripción.
            - "idiomas": (Array de Strings) Solo los idiomas con nivel profesional en una sola línea separados por comas, sin descripción.
 
@@ -124,4 +124,5 @@ def procesar_cv():
     return "No se detectó archivo."
 
 if __name__ == '__main__':
+
     app.run(debug=True)
