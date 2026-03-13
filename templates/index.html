@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Generador de CV Inteligente</title>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: 40px auto; padding: 20px; line-height: 1.6; }
+        label { font-weight: bold; display: block; margin-top: 15px; }
+        input, select { width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;}
+        button { background-color: #28a745; color: white; padding: 12px 20px; border: none; border-radius: 4px; cursor: pointer; margin-top: 20px; width: 100%; font-size: 16px; font-weight: bold;}
+        button:hover { background-color: #218838; }
+    </style>
+</head>
+<body>
+    <h1>Generador de CV Automático</h1>
+    <p>Rellena los datos y sube tu CV actual. Nuestra IA lo adaptará a la plantilla oficial.</p>
+    
+    <form action="/generar" method="post" enctype="multipart/form-data">
+        
+        <label for="nombre">Nombre Completo:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ej: Ana Gómez" required>
+
+        <label for="cargo">Cargo al que aplicas:</label>
+        <select id="cargo" name="cargo" required>
+            <option value="">Selecciona un cargo...</option>
+            <option value="ASSI">ASSI</option>
+            <option value="CONS">CONS</option>
+            <option value="SR CONS">SR CONS</option>
+            <option value="EXP SR CONS">EXP SR CONS</option>
+            <option value="MNGR">MNGR</option>
+            <option value="SR MNGR">SR MNGR</option>
+            <option value="SOCIO">SOCIO</option>
+        </select>
+
+        <label for="experiencia">Años de experiencia en este sector:</label>
+        <input type="number" id="experiencia" name="experiencia" min="0" placeholder="Ej: 3" required>
+
+        <label for="cv_adjunto">Adjunta tu CV actual (Solo PDF):</label>
+        <input type="file" id="cv_adjunto" name="cv_adjunto" accept=".pdf" required>
+
+        <button type="submit">Procesar y Generar CV</button>
+    </form>
+</body>
+</html>
